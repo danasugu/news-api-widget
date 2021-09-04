@@ -1,10 +1,11 @@
 'use strict';
-const API_URL = 'http://www.mocky.io/v2/58fda6ce0f0000c40908b8c8';
+const NEWS_API_URL = 'http://www.mocky.io/v2/58fda6ce0f0000c40908b8c8';
 const loadPageOneElement = document.querySelector('.news-content');
+const loadPageThreeElement = document.getElementById('pageThree').onclick;
 
 async function getNews() {
   loadPageOneElement.innerHTML = '';
-  const response = await fetch(API_URL);
+  const response = await fetch(NEWS_API_URL);
   const json = await response.json();
   const pageOne = json.news.slice(0, 5);
   const pageTwo = json.news.slice(5, 10);
